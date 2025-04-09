@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Show & Hide Password</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+
+    input {
+      padding: 10px;
+      font-size: 16px;
+      margin-right: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <input type="password" id="passwordField" placeholder="Enter password">
+    <button onclick="togglePassword()">Show</button>
+  </div>
+
+  <script>
+    function togglePassword() {
+      const passwordInput = document.getElementById("passwordField");
+      const button = passwordInput.nextElementSibling;
+
+      if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        button.innerText = "Hide";
+      } else {
+        passwordInput.type = "password";
+        button.innerText = "Show";
+      }
+    }
+  </script>
+
+</body>
+</html>
